@@ -15,7 +15,7 @@ class userController extends Controller
         
         $request->validate(
             [
-                'nik'=>'required|unique:users,email',
+                'nik'=>'required|unique:users,email|min:16|max:16',
                 'name'=>'required'
             ],
             [

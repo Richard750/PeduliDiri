@@ -58,14 +58,14 @@
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 large">
+        <span class="mr-2 d-none d-lg-inline text-gray-600" style="font-size: 13px">
           @if (!empty(auth()->user()->name))
             {{ auth()->user()->name }}
           @else
             USER
           @endif
         </span>
-        <img class="img-profile rounded-circle" style="width: 35px; height: 35px" src="img/user_profile.jpg" alt="user_profile">
+        <img class="img-profile rounded-circle" style="width: 37px; height: 37px" src="img/user_profile.jpg" alt="user_profile">
       </a>
       <!-- Dropdown - User Information -->
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

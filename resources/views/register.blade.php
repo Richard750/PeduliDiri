@@ -58,7 +58,7 @@
 
                     <div class="form-group">
                       <label for="email">NIK</label>
-                      <input id="nik" type="text" class="form-control form-control-user" name="nik" tabindex="1" required autofocus>
+                      <input id="nik" type="number" class="form-control form-control-user" pattern="[0-9]" name="nik" tabindex="1" required autofocus>
                       <div class="invalid-feedback">
                         Harap isi NIK
                       </div>

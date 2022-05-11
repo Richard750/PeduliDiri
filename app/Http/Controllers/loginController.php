@@ -20,7 +20,6 @@ class loginController extends Controller
         if (Auth::attempt($request->only('name', 'email', 'password'))){
             return redirect('/dashboard');
         }
-        // return redirect('/')->with('alert', "Nama dan NIK tidak ditemukan.");
         return redirect('/')->with('alert', "Login gagal! Periksa kembali Nama & NIK.");
     }
 

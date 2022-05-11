@@ -15,11 +15,11 @@ class PerjalananFactory extends Factory
     public function definition()
     {
         return [
-            'id_user'=>3,
+            'id_user'=>7,
             'jam'=>$this->faker->time(),
             'tanggal'=>$this->faker->date(),
             'lokasi'=>$this->faker->address(),
-            'suhu'=>$this->faker->numberBetween(30, 45),
+            'suhu'=>$this->faker->numberBetween(32, 39),
         ];
     }
 }

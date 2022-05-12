@@ -5,7 +5,7 @@
 
 @section('body')
 
-<!-- DataTales -->
+<!-- DataTables -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">Tabel Data Perjalanan Anda.</h6>
@@ -19,6 +19,7 @@
             <th>Jam</th>
             <th>Lokasi</th>
             <th>Suhu (℃)</th>
+            <th scope="col" >Opsi</th>
           </tr>
         </thead>
         <tbody>
@@ -28,6 +29,35 @@
               <td>{{ $item->jam }}</td>
               <td style="text-align:left;">{{ $item->lokasi }}</td>
               <td>{{ $item->suhu }}</td>
+              <td>
+                <a href="#" data-toggle="modal" data-target="#deleteModal">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+              </td>
+              <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin ingin menghapus data?</h5>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">Catatan perjalanan akan dihapus selamanya. </div>
+                    <div class="modal-footer">
+                      <form method="POST" action="/deletePerjalanan" class="needs-validation">
+                        {{ csrf_field() }}
+                        <button class="btn btn-danger" type="button" data-dismiss="modal">
+                          Tidak
+                        </button>
+                        <button name="delete" id="delete" class="btn btn-success align-center" type="submit" value="{{ $item->id }}">
+                          Ya
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </tr>
             @endforeach
           </tbody>
@@ -35,7 +65,6 @@
     </div>
   </div>
 </div>
-
 
 @endsection
 

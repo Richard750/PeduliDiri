@@ -19,7 +19,7 @@ class PerjalananFactory extends Factory
             'jam'=>$this->faker->time(),
             'tanggal'=>$this->faker->date(),
             'lokasi'=>$this->faker->address(),
-            'suhu'=>$this->faker->numberBetween(32, 39),
+            'suhu'=>$this->faker->numberBetween(34, 39),
         ];
     }
 }

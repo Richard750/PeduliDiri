@@ -37,16 +37,16 @@ class perjalananController extends Controller
         return redirect('data-perjalanan');
     }
 
-    // public function DeletePerjalanan(Request $request){
-    //     $delete = $request->delete;
-    //     $data = User::join('perjalanans', 'perjalanans.id_user', '=', 'users.id')
-    //     ->Where(function ($query) use($delete) {
-    //             $query->where('users.id', auth()->user()->id)
-    //                     ->where('perjalanans.id',$delete);
-    //     })
-    //     ->get(['perjalanans.*']);
+    public function DeletePerjalanan(Request $request){
+        $delete = $request->delete;
+        $data = User::join('perjalanans', 'perjalanans.id_user', '=', 'users.id')
+        ->Where(function ($query) use($delete) {
+                $query->where('users.id', auth()->user()->id)
+                        ->where('perjalanans.id',$delete);
+        })
+        ->get(['perjalanans.*']);
 
-    //     Perjalanan::destroy($data);
-    //     return back();
-    // }
+        Perjalanan::destroy($data);
+        return back();
+    }
 }

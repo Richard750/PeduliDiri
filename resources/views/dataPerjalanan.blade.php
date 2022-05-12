@@ -31,8 +31,6 @@
               <td>{{ $item->suhu }}</td>
               <td>
                 
-                {{-- <a href="{{ url('edit-perjalanan/'.$item->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a> --}}
-                
                 <form method="POST" action="/editPerjalanan">
                   <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#deleteModal-{{ $item->id }}">
                     <i class="fas fa-trash"></i>
@@ -80,22 +78,3 @@
   </div>
   
   @endsection
-  
-  
-  {{-- <script>
-    $(document).ready(function() {
-      $('#dataTable').DataTable();
-    } );
-  </script> --}}
-  
-  
-  {{-- <th scope="col" >Opsi</th> --}}
-
-{{-- <td>
-  <form method="POST" action="/deletePerjalanan" class="needs-validation">
-    {{ csrf_field() }}
-    <button name="delete" id="delete" class="btn btn-danger align-center" type="submit" value="{{ $item->id }}" style="color:#fff; :75px; height:35px;">
-      <i class="fa fa-trash" aria-hidden="true"></i>
-    </button>
-  </form>
-</td> --}}

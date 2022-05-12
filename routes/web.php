@@ -31,12 +31,8 @@ Route::get('/dashboard', function() {
 Route::get('/data-perjalanan',[perjalananController::class,'index'])->middleware('auth');
 
 Route::any('editPerjalanan', [perjalananController::class, 'editPerjalanan'])->middleware('auth');
-Route::any('/update-perjalanan', [perjalananController::class, 'updatePerjalanan'])->middleware('auth');
+Route::any('/update-perjalanan{id}', [perjalananController::class, 'updatePerjalanan'])->middleware('auth');
 Route::post('/deletePerjalanan',[perjalananController::class,'DeletePerjalanan'])->middleware('auth');
 
 // User Logout
 Route::get('/logout', [loginController::class, 'LogOut']);
-
-
-// Migrate 1 Tabel
-// php artisan migrate:refresh --path=/database/migrations/filemigrasi.php

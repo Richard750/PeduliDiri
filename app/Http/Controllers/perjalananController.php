@@ -11,8 +11,6 @@ class perjalananController extends Controller
 {
     
     public function index(){
-        // $data = perjalanan::all();
-        // return view('dataPerjalanan', compact('perjalanan'));
 
         $data = DB::table('perjalanans')
         ->join('users', 'users.id', '=', 'perjalanans.id_user')
@@ -44,21 +42,6 @@ class perjalananController extends Controller
         $selected = Perjalanan::find(((int) $request->id));
         return view('editPerjalanan', ['data' => $selected ]);
     }
-
-    // public function updatePerjalanan(Request $request){
-    //     $data=[
-    //         'tanggal'=>$request->tanggal,
-    //         'jam'=>$request->jam,
-    //         'lokasi'=>$request->lokasi,
-    //         'suhu'=>$request->suhu,
-    //         'id_user'=>auth()->user()->id,
-    //     ];
-
-    //     DB::table('perjalanans')
-    //           ->where('id', $request->edit)
-    //           ->update($data);
-    //     return back();
-    // }
 
     public function updatePerjalanan(Request $request)
     {

@@ -29,6 +29,9 @@ Route::get('/dashboard', function() {
 
 // Data Perjalanan
 Route::get('/data-perjalanan',[perjalananController::class,'index'])->middleware('auth');
+
+Route::any('editPerjalanan', [perjalananController::class, 'editPerjalanan'])->middleware('auth');
+Route::any('/update-perjalanan', [perjalananController::class, 'updatePerjalanan'])->middleware('auth');
 Route::post('/deletePerjalanan',[perjalananController::class,'DeletePerjalanan'])->middleware('auth');
 
 // User Logout

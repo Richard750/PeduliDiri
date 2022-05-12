@@ -11,6 +11,9 @@ class perjalananController extends Controller
 {
     
     public function index(){
+        // $data = perjalanan::all();
+        // return view('dataPerjalanan', compact('perjalanan'));
+
         $data = DB::table('perjalanans')
         ->join('users', 'users.id', '=', 'perjalanans.id_user')
         ->select('users.email', 'perjalanans.tanggal', 'perjalanans.id', 'perjalanans.lokasi', 'perjalanans.suhu', 'perjalanans.jam')
@@ -35,6 +38,38 @@ class perjalananController extends Controller
         perjalanan::create($data);
 
         return redirect('data-perjalanan');
+    }
+
+    Public function editPerjalanan(Request $request) {
+        $selected = Perjalanan::find(((int) $request->id));
+        return view('editPerjalanan', ['data' => $selected ]);
+    }
+
+    // public function updatePerjalanan(Request $request){
+    //     $data=[
+    //         'tanggal'=>$request->tanggal,
+    //         'jam'=>$request->jam,
+    //         'lokasi'=>$request->lokasi,
+    //         'suhu'=>$request->suhu,
+    //         'id_user'=>auth()->user()->id,
+    //     ];
+
+    //     DB::table('perjalanans')
+    //           ->where('id', $request->edit)
+    //           ->update($data);
+    //     return back();
+    // }
+
+    public function updatePerjalanan(Request $request)
+    {
+        $perjalanan = perjalanan::find(((int) $request->id));
+        $perjalanan->jam = $request->jam;
+        $perjalanan->tanggal = $request->tanggal;
+        $perjalanan->lokasi = $request->lokasi;
+        $perjalanan->suhu = $request->suhu;
+        $perjalanan->update();
+
+        return redirect('/data-perjalanan');
     }
 
     public function DeletePerjalanan(Request $request){

@@ -31,7 +31,7 @@
             <div class="form-group">
               <label for="suhu">Suhu</label>
               <div class="input-group">
-                <input required type="number" class="form-control" id="suhu" name="suhu" placeholder="Suhu tubuh" min="27" max="45" value="">
+                <input required type="number" class="form-control" id="suhu" name="suhu" placeholder="Suhu tubuh" min="34" max="42" value="">
                 <div class="input-group-append">
                   <span class="input-group-text">℃</span>
                 </div>

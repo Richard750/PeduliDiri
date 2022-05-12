@@ -30,7 +30,7 @@
         </p>
         <div class="row">
           <div class="col-lg-6">
-            <a href="http://127.0.0.1:8000/form-perjalanan" class="btn btn-primary btn-icon-split col-lg-12 mb-2">
+            <a href="{{ url('form-perjalanan') }}" class="btn btn-primary btn-icon-split col-lg-12 mb-2">
               <span class="icon text-white-50">
                 <i class="fas fa-fw fa-table"></i>
               </span>
@@ -38,7 +38,7 @@
             </a>
           </div>
           <div class="col-lg-6">
-            <a href="http://127.0.0.1:8000/data-perjalanan" class="btn btn-primary btn-icon-split col-lg-12 mb-2">
+            <a href="{{ url('data-perjalanan') }}" class="btn btn-primary btn-icon-split col-lg-12 mb-2">
               <span class="icon text-white-50">
                 <i class="fas fa-info-circle"></i>
               </span>
